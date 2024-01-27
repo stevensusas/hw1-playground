@@ -1,5 +1,4 @@
 import SwiftUI
-import PlaygroundSupport
 
 /// The game UI.
 struct AdventureGameView<Game: AdventureGame>: View {

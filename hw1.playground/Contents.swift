@@ -18,6 +18,7 @@ struct YourGame: AdventureGame {
     ///
     /// - Parameter context: The object you use to write output and end the game.
     mutating func start(context: AdventureGameContext) {
+        SynergyEngine.activate()
         context.write("Welcome to Generic Adventure Game!")
     }
     
