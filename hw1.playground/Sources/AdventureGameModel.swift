@@ -1,16 +1,26 @@
 import SwiftUI
 
+/// A line being displayed in the output.
 struct AdventureGameLine: Identifiable {
     let id = UUID()
     let content: AttributedString
 }
 
-@Observable class AdventureGameModel<Game: AdventureGame>: AdventureGameContext {
-    var game = Game()
-    var input = ""
+/// Model that manages interaction between the UI and the game logic.
+class AdventureGameModel<Game: AdventureGame>: AdventureGameContext, ObservableObject {
+    /// The current game.
+    ///
+    /// Re-created on reset.
+    @Published var game = Game()
+    
+    /// The line of input being entered.
+    @Published var input = ""
 
-    private(set) var isEnded = false
-    private(set) var lines = [AdventureGameLine]()
+    /// Whether the game has ended.
+    @Published private(set) var isEnded = false
+    
+    /// The list of lines being displayed in the output.
+    @Published private(set) var lines = [AdventureGameLine]()
     
     public func write(_ attributedString: AttributedString) {
         lines.append(AdventureGameLine(content: attributedString))
@@ -30,6 +40,17 @@ struct AdventureGameLine: Identifiable {
         game.start(context: self)
     }
     
+    /// Resets the game by re-initializing the game logic, resetting UI state,
+    /// and calling the start method again.
+    func reset() {
+        game = Game()
+        input = ""
+        isEnded = false
+        lines = []
+        game.start(context: self)
+    }
+    
+    /// Submits the current line of input to the game logic.
     func submit() {
         var inputAttributedString = AttributedString(input)
         inputAttributedString.swiftUI.font = .body.bold().italic()
