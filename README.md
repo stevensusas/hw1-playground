@@ -22,9 +22,13 @@
 1. 
 2. 
 
-**How do you use structs, enums, and protocols in your program?** *(insert a brief explanation)*
+**Explain how your code is designed. In particular, describe how you used structs or enums, as well as protocols.**
 
-**How do you use optionals in your program?** *(insert a brief explanation)*
+*(insert a brief explanation)*
+
+**How do you use optionals in your program?**
+
+*(insert a brief explanation)*
 
 **What extra credit features did you implement, if any?**
 
