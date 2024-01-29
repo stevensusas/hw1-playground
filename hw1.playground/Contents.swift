@@ -1,5 +1,7 @@
 import SwiftUI
 
+// TODO: Declare any additional structs, classes, enums, or protocols here!
+
 /// Declare your game's behavior and state in this struct.
 ///
 /// This struct will be re-created when the game resets. All game state should
@@ -9,6 +11,7 @@ struct YourGame: AdventureGame {
     ///
     /// You can generate this dynamically based on your game's state.
     var title: String {
+        // TODO: Change this title
         return "Generic Adventure Game"
     }
     
@@ -18,7 +21,8 @@ struct YourGame: AdventureGame {
     ///
     /// - Parameter context: The object you use to write output and end the game.
     mutating func start(context: AdventureGameContext) {
-        SynergyEngine.activate()
+        // TODO: Remove this and implement logic to start your game!
+        neverGonnaGiveYouUp()
         context.write("Welcome to Generic Adventure Game!")
     }
     
@@ -46,6 +50,7 @@ struct YourGame: AdventureGame {
     ///   - input: The line the user typed.
     ///   - context: The object you use to write output and end the game.
     mutating func handle(input: String, context: AdventureGameContext) {
+        // TODO: Parse the input and implement your game logic!
         context.write("You decide to \(input). It's not very effective.")
     }
 }
