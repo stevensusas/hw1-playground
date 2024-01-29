@@ -1,4 +1,4 @@
-# *(insert title here)*
+# *(game title)*
 
 *For instructions, consult the [CIS 1951 website](https://www.seas.upenn.edu/~cis1951/assignments/hw/hw1).*
 
@@ -25,6 +25,10 @@
 **How do you use structs, enums, and protocols in your program?** *(insert a brief explanation)*
 
 **How do you use optionals in your program?** *(insert a brief explanation)*
+
+**What extra credit features did you implement, if any?**
+
+* *(if no extra credit, write "None")*
 
 ## Endings
 
