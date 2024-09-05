@@ -8,6 +8,9 @@ struct AdventureGameView<Game: AdventureGame>: View {
     /// The underlying game model.
     @StateObject var model = AdventureGameModel<Game>()
     
+    /// Special ID denoting the bottom of the view.
+    let bottomId = "bottom"
+    
     /// Header containing the title and a reset button.
     var header: some View {
         VStack(spacing: 0) {
@@ -35,8 +38,14 @@ struct AdventureGameView<Game: AdventureGame>: View {
                     ForEach(model.lines) { line in
                         Text(line.content)
                     }
+                    
+                    Rectangle()
+                        .fill(.clear)
+                        .frame(height: 0)
+                        .padding(.bottom)
+                        .id(bottomId)
                 }
-                .padding()
+                .padding([.top, .horizontal])
                 .frame(width: 480, alignment: .leading)
                 
                 // Whenever we add a line, scroll to the bottommost line
@@ -45,15 +54,11 @@ struct AdventureGameView<Game: AdventureGame>: View {
                 // need to support macOS Ventura, hence the #available check
                 if #available(macOS 14.0, *) {
                     content.onChange(of: model.lines.last?.id) {
-                        if let id = model.lines.last?.id {
-                            proxy.scrollTo(id, anchor: .bottom)
-                        }
+                        proxy.scrollTo(bottomId, anchor: .bottom)
                     }
                 } else {
-                    content.onChange(of: model.lines.last?.id) { id in
-                        if let id {
-                            proxy.scrollTo(id, anchor: .bottom)
-                        }
+                    content.onChange(of: model.lines.last?.id) { _ in
+                        proxy.scrollTo(bottomId, anchor: .bottom)
                     }
                 }
             }
