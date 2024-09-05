@@ -1,6 +1,6 @@
 # *(game title)*
 
-*For instructions, consult the [CIS 1951 website](https://www.seas.upenn.edu/~cis1951/assignments/hw/hw1).*
+*For instructions, consult the [CIS 1951 website](https://www.seas.upenn.edu/~cis1951/24fa/assignments/hw/hw1).*
 
 ## Explanations
 
