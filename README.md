@@ -1,4 +1,4 @@
-# *(game title)*
+# *Friday Night at Penn*
 
 *For instructions, consult the [CIS 1951 website](https://www.seas.upenn.edu/~cis1951/24fa/assignments/hw/hw1).*
 
