@@ -21,11 +21,11 @@
 
 **Explain how your code is designed. In particular, describe how you used structs or enums, as well as protocols.**
 
-*(insert a brief explanation)*
+In this code, I use Swift's structs, enums, and protocols for clarity and modularity. Enums like Direction define possible user inputs (east, west, south, north, and talk), simplifying command parsing. Protocols Location and Person establish blueprints for game locations and characters, ensuring consistent implementation across different structs and allowing a generic type to be passed in the game state object. Structs like Annie, John, and Casey conform to Person, representing characters with specific attributes and behaviors. Location structs like Locust, PhiPsi, and Castle conform to Location, each defining unique settings, descriptions, and possible exits. The main game logic is handled by the game state struct, which manages the game's state, current location, and user interactions.
 
 **How do you use optionals in your program?**
 
-*(insert a brief explanation)*
+In this project I used Optionals to safely handle the presence or absence of values. The person property in the Location protocol is an optional (Person?), as not all locations have a character to interact with. When the player chooses to "talk," the game uses optional binding (if let) to check if a person exists at the current location before proceeding, thus avoiding potential runtime errors due to nil values.
 
 **What extra credit features did you implement, if any?**
 
